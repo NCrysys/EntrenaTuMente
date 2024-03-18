@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="ajustes">
+        <item name="theme">@string/theme</item>
+        <item name="idiom">@string/language</item>
+    </string-array>
+    <string-array name="themes">
+        <item name="default">@string/defective</item>
+        <item name="light">@string/light</item>
+        <item name="dark">@string/dark</item>
+    </string-array>
+    <string-array name="idiomas">
+        <item name="en">@string/en</item>
+        <item name="es">@string/es</item>
+    </string-array>
+</resources>

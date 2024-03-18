@@ -1,0 +1,38 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.EntrenaTuMente" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <!-- Customize your dark theme here. -->
+        <!-- <item name="colorPrimary">@color/my_dark_primary</item> -->
+    </style>
+
+
+    <style name="tituloStyle">
+        <item name="android:textColor">@color/morado</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">@dimen/titulo</item>
+    </style>
+
+    <style name="textStyle">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">@dimen/texto</item>
+    </style>
+
+    <style name="btnStyle">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:backgroundTint">@color/morado</item>
+    </style>
+
+    <style name="llBordeStyle">
+        <item name="android:orientation">vertical</item>
+        <item name="android:gravity">center</item>
+        <item name="android:background">@color/morado_oscuro</item>
+        <item name="android:padding">@dimen/padding</item>
+    </style>
+
+    <style name="llStyle">
+        <item name="android:orientation">vertical</item>
+        <item name="android:gravity">center</item>
+        <item name="android:background">@color/black</item>
+        <item name="android:padding">@dimen/padding</item>
+    </style>
+</resources>

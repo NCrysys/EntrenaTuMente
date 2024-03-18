@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="padding">21dp</dimen>
+    <dimen name="titulo">32sp</dimen>
+    <dimen name="texto">18sp</dimen>
+    <dimen name="img">300dp</dimen>
+    <dimen name="imgPeque">70dp</dimen>
+</resources>

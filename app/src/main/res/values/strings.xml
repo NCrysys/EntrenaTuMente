@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">Train Your Mind</string>
+    <string name="titulo">TRAIN YOUR MIND</string>
+    <string name="comenzar">START</string>
+
+    <string name="theme">Theme</string>
+    <string name="language">Language</string>
+    <string name="defective">System</string>
+    <string name="light">Light</string>
+    <string name="dark">Dark</string>
+    <string name="en">English</string>
+    <string name="es">Spanish</string>
+
+    <string name="ajustes">Settings</string>
+    <string name="cambiar_tema">Change Theme</string>
+    <string name="cambiar_idioma">Change Language</string>
+    <string name="atencion">ATTENTION</string>
+    <string name="reinicio_idioma">The language change will take effect when you restart the application.\nDo you want to restart the application?</string>
+    <string name="reiniciar">Restart</string>
+    <string name="cancelar">Cancel</string>
+    <string name="aceptar">Accept</string>
+</resources>
