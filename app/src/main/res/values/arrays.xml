@@ -13,4 +13,17 @@
         <item name="en">@string/en</item>
         <item name="es">@string/es</item>
     </string-array>
+    <string-array name="tables">
+        <item name="xRandom">Random × ?</item>
+        <item name="x1">1 × ?</item>
+        <item name="x2">2 × ?</item>
+        <item name="x3">3 × ?</item>
+        <item name="x4">4 × ?</item>
+        <item name="x5">5 × ?</item>
+        <item name="x6">6 × ?</item>
+        <item name="x7">7 × ?</item>
+        <item name="x8">8 × ?</item>
+        <item name="x9">8 × ?</item>
+        <item name="x10">10 × ?</item>
+    </string-array>
 </resources>

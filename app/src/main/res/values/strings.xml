@@ -1,8 +1,12 @@
 <resources>
+    <!--Main-->
     <string name="app_name">Train Your Mind</string>
     <string name="titulo">TRAIN YOUR MIND</string>
     <string name="comenzar">START</string>
+    <string name="match_couples">MATCH COUPLES</string>
+    <string name="chromatic_order">CHROMATIC ORDER</string>
 
+    <!--Arrays-->
     <string name="theme">Theme</string>
     <string name="language">Language</string>
     <string name="defective">System</string>
@@ -11,6 +15,7 @@
     <string name="en">English</string>
     <string name="es">Spanish</string>
 
+    <!--Ajustes-->
     <string name="ajustes">Settings</string>
     <string name="cambiar_tema">Change Theme</string>
     <string name="cambiar_idioma">Change Language</string>
@@ -19,4 +24,11 @@
     <string name="reiniciar">Restart</string>
     <string name="cancelar">Cancel</string>
     <string name="aceptar">Accept</string>
+
+    <!--Parejas-->
+    <string name="match_couples_normal">MATCH COUPLES NORMAL</string>
+    <string name="match_couples_multiply">MATCH COUPLES MULTIPLY</string>
+    <string name="table_of">Table of</string>
+    <string name="back">BACK</string>
+    <string name="another">ANOTHER</string>
 </resources>

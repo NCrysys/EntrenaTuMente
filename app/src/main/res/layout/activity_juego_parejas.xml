@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    style="@style/llBordeStyle">
+
+    <LinearLayout
+        android:id="@+id/llParejas"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        style="@style/llStyle"
+        android:padding="0dp">
+
+        <ImageView
+            android:id="@+id/imgAjustes"
+            android:layout_width="@dimen/imgPeque"
+            android:layout_height="@dimen/imgPeque"
+            android:src="@drawable/brain"
+            android:layout_gravity="top"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            style="@style/llStyle">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/match_couples"
+                style="@style/tituloStyle"
+                android:layout_margin="@dimen/borde"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/table_of"
+                style="@style/textStyle"
+                android:visibility="gone"/>
+
+            <TableLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:stretchColumns="*">
+
+                <!--fila1-->
+                <TableRow>
+                    <ToggleButton
+                        android:id="@+id/casilla1"
+                        style="@style/parejaStyle"/>
+                    <ToggleButton
+                        android:id="@+id/casilla2"
+                        style="@style/parejaStyle"/>
+                    <ToggleButton
+                        android:id="@+id/casilla3"
+                        style="@style/parejaStyle"/>
+                    <ToggleButton
+                        android:id="@+id/casilla4"
+                        style="@style/parejaStyle"/>
+                </TableRow>
+
+                <!--fila1-->
+                <TableRow>
+                    <ToggleButton
+                        android:id="@+id/casilla5"
+                        style="@style/parejaStyle"/>
+                    <ToggleButton
+                        android:id="@+id/casilla6"
+                        style="@style/parejaStyle"/>
+                    <ToggleButton
+                        android:id="@+id/casilla7"
+                        style="@style/parejaStyle"/>
+                    <ToggleButton
+                        android:id="@+id/casilla8"
+                        style="@style/parejaStyle"/>
+                </TableRow>
+
+                <!--fila1-->
+                <TableRow>
+                    <ToggleButton
+                        android:id="@+id/casilla9"
+                        style="@style/parejaStyle"/>
+                    <ToggleButton
+                        android:id="@+id/casilla10"
+                        style="@style/parejaStyle"/>
+                    <ToggleButton
+                        android:id="@+id/casilla11"
+                        style="@style/parejaStyle"/>
+                    <ToggleButton
+                        android:id="@+id/casilla12"
+                        style="@style/parejaStyle"/>
+                </TableRow>
+
+                <!--fila1-->
+                <TableRow>
+                    <ToggleButton
+                        android:id="@+id/casilla13"
+                        style="@style/parejaStyle"/>
+                    <ToggleButton
+                        android:id="@+id/casilla14"
+                        style="@style/parejaStyle"/>
+                    <ToggleButton
+                        android:id="@+id/casilla15"
+                        style="@style/parejaStyle"/>
+                    <ToggleButton
+                        android:id="@+id/casilla16"
+                        style="@style/parejaStyle"/>
+                </TableRow>
+
+                <!--fila1-->
+                <TableRow>
+                    <ToggleButton
+                        android:id="@+id/casilla17"
+                        style="@style/parejaStyle"/>
+                    <ToggleButton
+                        android:id="@+id/casilla18"
+                        style="@style/parejaStyle"/>
+                    <ToggleButton
+                        android:id="@+id/casilla19"
+                        style="@style/parejaStyle"/>
+                    <ToggleButton
+                        android:id="@+id/casilla20"
+                        style="@style/parejaStyle"/>
+                </TableRow>
+
+            </TableLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/btnVolver"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/back"
+                    style="@style/btnStyle"
+                    android:layout_margin="@dimen/bordePareja"/>
+
+                <Button
+                    android:id="@+id/btnOtro"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/another"
+                    style="@style/btnStyle"
+                    android:layout_margin="@dimen/bordePareja"
+                    android:visibility="gone"/>
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

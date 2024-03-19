@@ -1,8 +1,12 @@
 <resources>
+    <!--Main-->
     <string name="app_name">Entrena Tu Mente</string>
     <string name="titulo">ENTRENA TU MENTE</string>
     <string name="comenzar">COMENZAR</string>
+    <string name="match_couples">HACER PAREJAS</string>
+    <string name="chromatic_order">ORDEN CROMÁTICO</string>
 
+    <!--Arrays-->
     <string name="theme">Tema</string>
     <string name="language">Idioma</string>
     <string name="defective">Sistema</string>
@@ -11,6 +15,7 @@
     <string name="en">Inglés</string>
     <string name="es">Español</string>
 
+    <!--Ajustes-->
     <string name="ajustes">Ajustes</string>
     <string name="cambiar_tema">Cambiar Tema</string>
     <string name="cambiar_idioma">Cambiar Idioma</string>
@@ -19,4 +24,11 @@
     <string name="reiniciar">Reiniciar</string>
     <string name="cancelar">Cancelar</string>
     <string name="aceptar">Aceptar</string>
+
+    <!--Parejas-->
+    <string name="match_couples_normal">HACER PAREJAS NORMAL</string>
+    <string name="match_couples_multiply">HACER PAREJAS MULTIPLICAR</string>
+    <string name="table_of">Tabla del</string>
+    <string name="back">Atrás</string>
+    <string name="another">Otro</string>
 </resources>

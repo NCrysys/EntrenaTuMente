@@ -56,7 +56,24 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/titulo"
-                style="@style/tituloStyle"/>
+                style="@style/tituloStyle"
+                android:layout_margin="@dimen/borde"/>
+
+            <Button
+                android:id="@+id/btnParejas"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/match_couples"
+                style="@style/btnStyle"
+                android:layout_margin="@dimen/borde"/>
+
+            <Button
+                android:id="@+id/btnCromatico"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/chromatic_order"
+                style="@style/btnStyle"
+                android:layout_margin="@dimen/borde"/>
 
         </LinearLayout>
 

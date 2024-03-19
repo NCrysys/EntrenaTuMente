@@ -2,6 +2,7 @@ package com.example.entrenatumente;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -10,8 +11,8 @@ import android.widget.LinearLayout;
 
 public class MainActivity extends AppCompatActivity {
     private LinearLayout llPantallaInicial, llInicio;
-    private ImageView imgBrain, imgAjustes;
-    private Button btnComenzar;
+    private ImageView imgAjustes;
+    private Button btnComenzar, btnParejas, btnCromatico;
     private Ajustes ajustes;
 
     @Override
@@ -27,13 +28,23 @@ public class MainActivity extends AppCompatActivity {
         //finds
         llPantallaInicial=findViewById(R.id.llPantallaInicial);
         llInicio=findViewById(R.id.llInicio);
-        imgBrain=findViewById(R.id.imgBrain);
         imgAjustes=findViewById(R.id.imgAjustes);
         btnComenzar=findViewById(R.id.btnComenzar);
+        btnParejas=findViewById(R.id.btnParejas);
+        btnCromatico=findViewById(R.id.btnCromatico);
         //listeners
-        btnComenzar.setOnClickListener(comenzar);
         imgAjustes.setOnClickListener(configuracion);
+        btnComenzar.setOnClickListener(comenzar);
+        btnParejas.setOnClickListener(eligeJuego);
+        btnCromatico.setOnClickListener(eligeJuego);
     }
+
+    public View.OnClickListener configuracion = new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            ajustes.abrirAjustes();
+        }
+    };
 
     private View.OnClickListener comenzar = new View.OnClickListener() {
         @Override
@@ -43,10 +54,16 @@ public class MainActivity extends AppCompatActivity {
         }
     };
 
-    private View.OnClickListener configuracion = new View.OnClickListener() {
+    private View.OnClickListener eligeJuego = new View.OnClickListener() {
         @Override
         public void onClick(View v) {
-            ajustes.abrirAjustes();
+            if (v.getId()==btnParejas.getId()){
+                Intent intent = new Intent(MainActivity.this, ActivityParejas.class);
+                startActivity(intent);
+            }
+            else if (v.getId()==btnCromatico.getId()){
+
+            }
         }
     };
 }

@@ -13,6 +13,12 @@
         android:theme="@style/Theme.EntrenaTuMente"
         tools:targetApi="31">
         <activity
+            android:name=".ActivityJuegoParejas"
+            android:exported="false" />
+        <activity
+            android:name=".ActivityParejas"
+            android:exported="false" />
+        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
