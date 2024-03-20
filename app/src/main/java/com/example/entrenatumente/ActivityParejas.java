@@ -12,7 +12,7 @@ import android.widget.Spinner;
 public class ActivityParejas extends AppCompatActivity {
     private Button btnParejasNormal, btnParejasMultiply;
     private Spinner spnTabla;
-    private String tabla = "R";
+    private String table = "R";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,12 +40,12 @@ public class ActivityParejas extends AppCompatActivity {
                 startActivity(intent);
             }
             else if (v.getId()==btnParejasMultiply.getId()){
-                if (tabla.equals("R")){
+                if (table.equals("R")){
 
                 } else {
 
                 }
-                intent.putExtra("table", tabla);
+                intent.putExtra("table", table);
                 startActivity(intent);
             }
         }
@@ -54,7 +54,7 @@ public class ActivityParejas extends AppCompatActivity {
     private AdapterView.OnItemSelectedListener seleccionarTabla = new AdapterView.OnItemSelectedListener() {
         @Override
         public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-            tabla = String.valueOf(parent.getItemAtPosition(position).toString().charAt(0));
+            table = String.valueOf(parent.getItemAtPosition(position).toString().charAt(0));
         }
 
         @Override

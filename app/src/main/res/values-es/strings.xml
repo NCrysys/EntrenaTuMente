@@ -27,7 +27,7 @@
 
     <!--Parejas-->
     <string name="match_couples_normal">HACER PAREJAS NORMAL</string>
-    <string name="match_couples_multiply">HACER PAREJAS MULTIPLICAR</string>
+    <string name="match_couples_multiply">EMPAREJA OPERACIÓN/RESULTADO</string>
     <string name="table_of">Tabla del</string>
     <string name="back">Atrás</string>
     <string name="another">Otro</string>
