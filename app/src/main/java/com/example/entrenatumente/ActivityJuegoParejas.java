@@ -6,9 +6,11 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.ToggleButton;
 
 public class ActivityJuegoParejas extends AppCompatActivity {
+    private ImageView imgBrainJuegoParejas;
     private Button btnAtras, btnOtro;
     private ToggleButton casilla1, casilla2, casilla3, casilla4,
                         casilla5, casilla6, casilla7, casilla8,
@@ -24,13 +26,12 @@ public class ActivityJuegoParejas extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_juego_parejas);
-        //×
         findsYLinsteners();
         parejas = new Parejas(arrayCasillas);
         Intent intent=getIntent();
         table = intent.getStringExtra("table");
         if (table==null){
-
+            parejas.crearParejasDibujos();
         } else if (table.equals("R")) {
             parejas.crearParejasTablaRandom();
         } else {
@@ -40,9 +41,11 @@ public class ActivityJuegoParejas extends AppCompatActivity {
 
     private void findsYLinsteners() {
         //finds
+        imgBrainJuegoParejas = findViewById(R.id.imgBrainJuegoParejas);
         btnAtras=findViewById(R.id.btnAtras);
         btnOtro=findViewById(R.id.btnOtro);
         //listeners
+        imgBrainJuegoParejas.setOnClickListener(inicio);
         btnAtras.setOnClickListener(atrasOtro);
         btnOtro.setOnClickListener(atrasOtro);
         //casillas
@@ -104,7 +107,24 @@ public class ActivityJuegoParejas extends AppCompatActivity {
                 finish();
             }
             else if (v.getId()==btnOtro.getId()){
+                btnOtro.setVisibility(View.GONE);
+                numParejas=0;
+                if (table==null){
+                    parejas.crearParejasDibujos();
+                } else if (table.equals("R")) {
+                    parejas.crearParejasTablaRandom();
+                } else {
+                    parejas.crearParejasTabla(table);
+                }
             }
+        }
+    };
+
+    private View.OnClickListener inicio = new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            setResult(RESULT_OK);
+            finish();
         }
     };
 }

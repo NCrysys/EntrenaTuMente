@@ -6,13 +6,32 @@ import android.widget.ToggleButton;
 import java.util.ArrayList;
 
 public class Parejas {
+    private boolean dibujos = false;
     private ToggleButton[] arrayCasillas;
+    private String[] arrayParejasDibujos;
     private String[] arrayParejasTabla;
     private ArrayList<Integer> arrayPosicionParejasRepartidas;
     private ToggleButton parejaSeleccionada1 = null;
 
     public Parejas(ToggleButton[] arrayCasillas) {
         this.arrayCasillas = arrayCasillas;
+    }
+
+    public void crearParejasDibujos() {
+        dibujos = true;
+        arrayParejasDibujos = new String[]{"🐶","🐱","🎮","💼","⚽","🎬","🧩","🎨","🎸","🏮",
+                                            "🐶","🐱","🎮","💼","⚽","🎬","🧩","🎨","🎸","🏮"};
+        repartirParejasDibujos();
+    }
+
+    private void repartirParejasDibujos() {
+        arrayPosicionParejasRepartidas = new ArrayList();
+        for (int i = 0; i < arrayCasillas.length; i++) {
+            arrayCasillas[i].setTextOn(arrayParejasDibujos[getPosicionParejaRandom()]);
+            arrayCasillas[i].setTextOff("");
+            arrayCasillas[i].setChecked(false);
+            arrayCasillas[i].setClickable(true);
+        }
     }
 
     public void crearParejasTablaRandom() {
@@ -22,7 +41,7 @@ public class Parejas {
                 arrayParejasTabla[i] = randomNumber() + "×" + randomNumber();
             }
             else {
-                arrayParejasTabla[i] = muliplicar(arrayParejasTabla[i-10]);
+                arrayParejasTabla[i] = multiplicar(arrayParejasTabla[i-10]);
             }
         }
         repartirParejasTabla();
@@ -32,7 +51,7 @@ public class Parejas {
         return (int) Math.floor(Math.random()*(10-1+1)+1);
     }
 
-    private String muliplicar(String multiplicacion) {
+    private String multiplicar(String multiplicacion) {
         int n1 = Integer.parseInt(multiplicacion.split("×")[0]);
         int n2 = Integer.parseInt(multiplicacion.split("×")[1]);
         return String.valueOf(n1*n2);
@@ -54,12 +73,14 @@ public class Parejas {
     private void repartirParejasTabla() {
         arrayPosicionParejasRepartidas = new ArrayList();
         for (int i = 0; i < arrayCasillas.length; i++) {
-            arrayCasillas[i].setTextOn(getParejaRandom());
+            arrayCasillas[i].setTextOn(arrayParejasTabla[getPosicionParejaRandom()]);
             arrayCasillas[i].setTextOff("");
+            arrayCasillas[i].setChecked(false);
+            arrayCasillas[i].setClickable(true);
         }
     }
 
-    private String getParejaRandom() {
+    private int getPosicionParejaRandom() {
         int posicionPareja=-1;
         boolean yaRepartida;
         do {
@@ -72,7 +93,7 @@ public class Parejas {
             }
         } while (yaRepartida);
         arrayPosicionParejasRepartidas.add(posicionPareja);
-        return arrayParejasTabla[posicionPareja];
+        return posicionPareja;
     }
 
     public void setParejaSeleccionada1(ToggleButton parejaSeleccionada1) {
@@ -85,42 +106,44 @@ public class Parejas {
     }
 
     public boolean comprobarPareja(ToggleButton parejaSeleccionada2) {
-        parejaSeleccionada2.setChecked(true);
+        parejaSeleccionada2.setClickable(false);
         String pareja1 = String.valueOf(parejaSeleccionada1.getTextOn());
         String pareja2 = String.valueOf(parejaSeleccionada2.getTextOn());
         boolean sonPareja;
-        if (pareja1.contains("×") && pareja2.contains("×") ||
+        if (dibujos) {
+            sonPareja = pareja1.equals(pareja2);
+        }
+        else if (pareja1.contains("×") && pareja2.contains("×") ||
             !pareja1.contains("×") && !pareja2.contains("×")){
             sonPareja = false;
         }
         else {
             if (pareja1.contains("×")) {
-                pareja1 = muliplicar(pareja1);
+                pareja1 = multiplicar(pareja1);
             }
             if (pareja2.contains("×")) {
-                pareja2 = muliplicar(pareja2);
+                pareja2 = multiplicar(pareja2);
             }
             sonPareja = pareja1.equals(pareja2);
         }
-        if (sonPareja) {
-            parejaSeleccionada1.setClickable(false);
-            parejaSeleccionada2.setClickable(false);
-            parejaSeleccionada1=null;
-        } else {
+        if (!sonPareja) {
+            ToggleButton parejaEquivocada1 = parejaSeleccionada1;
             Handler handler = new Handler();
             handler.postDelayed(new Runnable() {
                 public void run() {
                     // acciones que se ejecutan tras los milisegundos
-                    parejaSeleccionada1.setClickable(true);
-                    parejaSeleccionada1.setChecked(false);
+                    parejaEquivocada1.setClickable(true);
+                    parejaSeleccionada2.setClickable(true);
+                    parejaEquivocada1.setChecked(false);
                     parejaSeleccionada2.setChecked(false);
-                    parejaSeleccionada1=null;
                 }
             }, 1000);
         }
+        parejaSeleccionada1=null;
         return sonPareja;
     }
 
+    /*
     private static void esperar (int segundos){
         try {
             Thread.sleep(segundos * 1000);
@@ -128,4 +151,5 @@ public class Parejas {
             System.out.println(e);
         }
     }
+    */
 }
